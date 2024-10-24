@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppCasaCambio.Views.Configuration"
+             Title="{Binding AppTitle}">
+    <ScrollView>
+    <VerticalStackLayout Padding="30" Spacing="20">
+        <Label 
+            x:Name="welcomeLabel" 
+            VerticalOptions="Center" 
+            HorizontalOptions="Center" />
+
+        <!-- Input para el Título de la Aplicación -->
+        <Label Text="Título de la Aplicación:" FontSize="18"/>
+        <Entry 
+            x:Name="appTitleEntry" 
+            Text="{Binding AppTitle}" 
+            FontSize="18"/>
+
+        <!-- Input para el Mensaje de Bienvenida -->
+        <Label Text="Mensaje de Bienvenida:" FontSize="18"/>
+        <Entry 
+            x:Name="welcomeMessageEntry" 
+            Text="{Binding WelcomeMessage}" 
+            FontSize="18"/>
+
+        <!-- Input para el Título de Bienvenida -->
+        <Label Text="Título de Bienvenida:" FontSize="18"/>
+        <Entry 
+            x:Name="welcomeTitleEntry" 
+            Text="{Binding WelcomeTitle}" 
+            FontSize="18"/>
+
+        <!-- Input para el Nombre del Usuario -->
+        <Label Text="Nombre del Usuario:" FontSize="18"/>
+        <Entry 
+            x:Name="userNameEntry" 
+            Text="{Binding User.Name}" 
+            FontSize="18"/>
+
+        <!-- Botón para Guardar Cambios -->
+        <Button 
+            Text="Guardar Cambios" 
+            FontSize="18" 
+            BackgroundColor="Blue" 
+            TextColor="White" 
+            Clicked="OnSaveClicked"/>
+    </VerticalStackLayout>
+        </ScrollView>
+</ContentPage>

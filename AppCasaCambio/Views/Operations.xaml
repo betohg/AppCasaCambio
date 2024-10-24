@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppCasaCambio.Views.Operations"
+             Title="Operaciones">
+    <ScrollView>
+        <VerticalStackLayout Padding="30" Spacing="20">
+            <Label 
+                Text="Operación Compra - Venta"
+                FontSize="24"
+                HorizontalOptions="Center" />
+
+            <!-- Campo para la cantidad -->
+            <HorizontalStackLayout>
+                <Label 
+                    Text="Cantidad:"
+                    FontSize="18"
+                    VerticalOptions="Center"/>
+                <Entry 
+                    x:Name="cantidadEntry"
+                    Placeholder="Ingresa la cantidad"
+                    Keyboard="Numeric"
+                    FontSize="18"
+                    HorizontalOptions="FillAndExpand"/>
+            </HorizontalStackLayout>
+
+            <!-- Selección de moneda de origen -->
+            <Label 
+                Text="De:"
+                FontSize="18"
+                VerticalOptions="Center"/>
+            <Picker 
+                x:Name="monedaOrigenPicker"
+                Title="Selecciona moneda"
+                FontSize="18"
+                ItemDisplayBinding="{Binding Nombre}">
+                <!-- Aquí las monedas serán cargadas dinámicamente -->
+            </Picker>
+
+            <!-- Selección de moneda de destino -->
+            <Label 
+                Text="A:"
+                FontSize="18"
+                VerticalOptions="Center"/>
+            <Picker 
+                x:Name="monedaDestinoPicker"
+                Title="Selecciona moneda"
+                FontSize="18"
+                ItemDisplayBinding="{Binding Nombre}">
+                <!-- Aquí las monedas serán cargadas dinámicamente -->
+            </Picker>
+
+            <!-- Resultado de compra y venta -->
+            <Label 
+                Text="Resultado de Compra:"
+                FontSize="18"/>
+            <Label 
+                x:Name="resultadoCompraLabel"
+                FontSize="18"/>
+
+            <Label 
+                Text="Resultado de Venta:"
+                FontSize="18"/>
+            <Label 
+                x:Name="resultadoVentaLabel"
+                FontSize="18"/>
+
+            <!-- Botones de Compra y Venta -->
+            <HorizontalStackLayout Spacing="15" HorizontalOptions="Center">
+                <Button 
+                    Text="Compra"
+                    FontSize="18"
+                    BackgroundColor="Blue"
+                    TextColor="White"
+                    HorizontalOptions="FillAndExpand"
+                    Clicked="OnCompraClicked"/>
+                <Button 
+                    Text="Venta"
+                    FontSize="18"
+                    BackgroundColor="Blue"
+                    TextColor="White"
+                    HorizontalOptions="FillAndExpand"
+                    Clicked="OnVentaClicked"/>
+            </HorizontalStackLayout>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

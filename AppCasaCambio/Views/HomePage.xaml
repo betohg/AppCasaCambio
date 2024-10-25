@@ -2,26 +2,40 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="AppCasaCambio.Views.HomePage"
-             Title="{Binding AppTitle}">
-    <VerticalStackLayout Padding="30" Spacing="20" VerticalOptions="Center">
-        <Label 
-            x:Name="welcomeTitle"
-            FontSize="28"
-            FontAttributes="Bold"
-            HorizontalOptions="Center" />
+             Title="{Binding AppTitle}"
+             BackgroundColor="#F5F5F5">
 
+    <VerticalStackLayout Padding="40" Spacing="30" VerticalOptions="Center">
+
+        <!-- Título de bienvenida -->
+        <Frame Padding="10" HasShadow="True" BackgroundColor="White" CornerRadius="15" HorizontalOptions="Center">
+            <Label 
+                x:Name="welcomeTitle"
+                Text="¡Bienvenido!"
+                FontSize="28"
+                FontAttributes="Bold"
+                TextColor="#333"
+                HorizontalOptions="Center"/>
+        </Frame>
+
+        <!-- Mensaje de bienvenida -->
         <Label
             x:Name="welcomeLabel"
             FontSize="18"
+            TextColor="#666"
             HorizontalOptions="Center"
             HorizontalTextAlignment="Center"
             Padding="0,10,0,0" />
 
-        <Image 
-            Source="logo.png"
-            HeightRequest="150"
-            WidthRequest="150"
-            HorizontalOptions="Center" />
+        <!-- Logo -->
+        <Frame Padding="10" BackgroundColor="White" CornerRadius="100" HeightRequest="180" WidthRequest="180" HorizontalOptions="Center" HasShadow="True">
+            <Image 
+                Source="logo.png"
+                HeightRequest="150"
+                WidthRequest="150"
+                HorizontalOptions="Center" />
+        </Frame>
 
     </VerticalStackLayout>
+
 </ContentPage>

@@ -17,7 +17,7 @@ public partial class Configuration : ContentPage
 
     private void LoadConfiguration()
     {
-        var filePath = "C:\\Users\\beto_\\source\\repos\\AppCasaCambio\\AppCasaCambio\\Data\\config.json";
+        var filePath = "C:\\Users\\beto_\\Source\\Repos\\AppCasaCambio\\AppCasaCambio\\Data\\config.json";
         string jsonString = File.ReadAllText(filePath);
         appConfig = JsonSerializer.Deserialize<AppConfig>(jsonString);
     }
@@ -29,7 +29,10 @@ public partial class Configuration : ContentPage
         welcomeMessageEntry.Text = appConfig.WelcomeMessage;
         welcomeTitleEntry.Text = appConfig.WelcomeTitle;
         userNameEntry.Text = appConfig.User.Name;
-        welcomeLabel.Text = appConfig.WelcomeMessage; // Muestra el mensaje de bienvenida
+        userGreetingEntry.Text = appConfig.User.Greeting;
+        welcomeLabel.Text = appConfig.ScreenMessages.ConfigurationMessage;
+        homeTitleEntry.Text = appConfig.Navbar.Home;
+        configurationTitleEntry.Text = appConfig.Navbar.Configuration;
     }
 
     private void OnSaveClicked(object sender, EventArgs e)

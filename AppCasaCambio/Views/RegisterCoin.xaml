@@ -2,40 +2,59 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="AppCasaCambio.Views.RegisterCoin"
-             Title="Registrar Moneda">
+             Title="Registrar Moneda"
+             BackgroundColor="#F5F5F5">
     <VerticalStackLayout Padding="20" Spacing="15">
         <Label 
             Text="Registrar Nueva Moneda"
             FontSize="24"
-            HorizontalOptions="Center" />
+            FontAttributes="Bold"
+            HorizontalOptions="Center"
+            TextColor="#333" />
 
-        <!-- Campo para el nombre de la moneda -->
-        <Entry 
-            x:Name="nombreMonedaEntry"
-            Placeholder="Nombre de la Moneda"
-            FontSize="18" />
+        <Frame Padding="10" CornerRadius="10" BackgroundColor="White" HasShadow="True">
+            <VerticalStackLayout Spacing="15">
+                <!-- Campo para el nombre de la moneda -->
+                <Entry 
+                    x:Name="nombreMonedaEntry"
+                    Placeholder="Nombre de la Moneda"
+                    FontSize="18"
+                    TextColor="#333"
+                    BackgroundColor="#F9F9F9"
+                    Margin="0,0,0,10"/>
 
-        <!-- Campo para el valor de venta -->
-        <Entry 
-            x:Name="ventaMonedaEntry"
-            Placeholder="Valor de Venta"
-            FontSize="18"
-            Keyboard="Numeric" />
+                <!-- Campo para el valor de venta -->
+                <Entry 
+                    x:Name="ventaMonedaEntry"
+                    Placeholder="Valor de Venta"
+                    FontSize="18"
+                    Keyboard="Numeric"
+                    TextColor="#333"
+                    BackgroundColor="#F9F9F9"
+                    Margin="0,0,0,10"/>
 
-        <!-- Campo para el valor de compra -->
-        <Entry 
-            x:Name="compraMonedaEntry"
-            Placeholder="Valor de Compra"
-            FontSize="18"
-            Keyboard="Numeric" />
+                <!-- Campo para el valor de compra -->
+                <Entry 
+                    x:Name="compraMonedaEntry"
+                    Placeholder="Valor de Compra"
+                    FontSize="18"
+                    Keyboard="Numeric"
+                    TextColor="#333"
+                    BackgroundColor="#F9F9F9"
+                    Margin="0,0,0,10"/>
+            </VerticalStackLayout>
+        </Frame>
 
         <!-- Botón para registrar la moneda -->
         <Button 
             Text="Registrar Moneda"
             Clicked="OnRegistrarMonedaClicked"
-            BackgroundColor="Green"
+            BackgroundColor="#4CAF50"
             TextColor="White"
             FontSize="18"
-            HorizontalOptions="Center" />
+            HorizontalOptions="Center"
+            CornerRadius="10"
+            Padding="10,5" />
+
     </VerticalStackLayout>
 </ContentPage>

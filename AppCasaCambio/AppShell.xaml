@@ -6,7 +6,7 @@
     xmlns:local="clr-namespace:AppCasaCambio"
     xmlns:views="clr-namespace:AppCasaCambio.Views"
     Shell.FlyoutBehavior="Flyout"
-    Title="AppCasaCambio">
+    Title="{Binding AppTitle}">
 
     <!--<ShellContent
         Title="Home"
@@ -14,11 +14,10 @@
         Route="MainPage"/>-->
 
     <FlyoutItem Route="Home" FlyoutDisplayOptions="AsMultipleItems">
-        <ShellContent Title="Inicio" Icon="homeicon.png" ContentTemplate="{DataTemplate views:HomePage}"/>
-        <ShellContent Title="Operaciones" Icon="operationsicon.png" ContentTemplate="{DataTemplate views:Operations}"/>
-        <ShellContent Title="Registrar" Icon="coinicon.png" ContentTemplate="{DataTemplate views:RegisterCoin}"/>
-        <ShellContent Title="Reportes" Icon="reportsicon.png" ContentTemplate="{DataTemplate views:Reportes}"/>
-        <ShellContent Title="Configuracion" Icon="configicon.png" ContentTemplate="{DataTemplate views:Configuration}"/>
+        <ShellContent x:Name="hometitle" Icon="homeicon.png" ContentTemplate="{DataTemplate views:HomePage}"/>
+        <ShellContent x:Name="operationstitle" Icon="operationsicon.png" ContentTemplate="{DataTemplate views:Operations}"/>
+        <ShellContent x:Name="registertitle" Icon="coinicon.png" ContentTemplate="{DataTemplate views:RegisterCoin}"/>
+        <ShellContent x:Name="configurationtitle" Icon="configicon.png" ContentTemplate="{DataTemplate views:Configuration}"/>
     </FlyoutItem>
 
 </Shell>

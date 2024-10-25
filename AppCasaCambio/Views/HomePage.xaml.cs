@@ -29,4 +29,11 @@ public partial class HomePage : ContentPage
             ((Label)Content.FindByName("welcomeTitle")).Text = appConfig.WelcomeTitle;
         }
     }
+
+    protected override void OnAppearing()
+    {
+        base.OnAppearing();
+        LoadConfiguration();
+        DisplayWelcomeMessage();
+    }
 }

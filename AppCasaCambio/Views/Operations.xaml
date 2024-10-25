@@ -2,85 +2,111 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="AppCasaCambio.Views.Operations"
-             Title="Operaciones">
+             Title="Operaciones"
+             BackgroundColor="#F5F5F5">
     <ScrollView>
         <VerticalStackLayout Padding="30" Spacing="20">
             <Label 
                 Text="Operación Compra - Venta"
                 FontSize="24"
-                HorizontalOptions="Center" />
+                FontAttributes="Bold"
+                HorizontalOptions="Center"
+                TextColor="#333" />
 
-            <!-- Campo para la cantidad -->
-            <HorizontalStackLayout>
-                <Label 
-                    Text="Cantidad:"
-                    FontSize="18"
-                    VerticalOptions="Center"/>
-                <Entry 
-                    x:Name="cantidadEntry"
-                    Placeholder="Ingresa la cantidad"
-                    Keyboard="Numeric"
-                    FontSize="18"
-                    HorizontalOptions="FillAndExpand"/>
-            </HorizontalStackLayout>
+            <Frame Padding="10" CornerRadius="10" BackgroundColor="White" BorderColor="#DDD" HasShadow="True">
+                <HorizontalStackLayout>
+                    <Label 
+                        Text="Cantidad:"
+                        FontSize="18"
+                        VerticalOptions="Center"
+                        TextColor="#333"/>
+                    <Entry 
+                        x:Name="cantidadEntry"
+                        Placeholder="Ingresa la cantidad"
+                        Keyboard="Numeric"
+                        FontSize="18"
+                        HorizontalOptions="FillAndExpand"
+                        BackgroundColor="#FFF"
+                        TextColor="#333"/>
+                </HorizontalStackLayout>
+            </Frame>
 
             <!-- Selección de moneda de origen -->
-            <Label 
-                Text="De:"
-                FontSize="18"
-                VerticalOptions="Center"/>
-            <Picker 
-                x:Name="monedaOrigenPicker"
-                Title="Selecciona moneda"
-                FontSize="18"
-                ItemDisplayBinding="{Binding Nombre}">
-                <!-- Aquí las monedas serán cargadas dinámicamente -->
-            </Picker>
+            <Frame Padding="10" CornerRadius="10" BackgroundColor="White" BorderColor="#DDD" HasShadow="True">
+                <VerticalStackLayout>
+                    <Label 
+                        Text="De:"
+                        FontSize="18"
+                        VerticalOptions="Center"
+                        TextColor="#333"/>
+                    <Picker 
+                        x:Name="monedaOrigenPicker"
+                        Title="Selecciona moneda"
+                        FontSize="18"
+                        BackgroundColor="LightGray"
+                        TextColor="#333"
+                        ItemDisplayBinding="{Binding Nombre}"/>
+                </VerticalStackLayout>
+            </Frame>
 
-            <!-- Selección de moneda de destino -->
-            <Label 
-                Text="A:"
-                FontSize="18"
-                VerticalOptions="Center"/>
-            <Picker 
-                x:Name="monedaDestinoPicker"
-                Title="Selecciona moneda"
-                FontSize="18"
-                ItemDisplayBinding="{Binding Nombre}">
-                <!-- Aquí las monedas serán cargadas dinámicamente -->
-            </Picker>
+            <Frame Padding="10" CornerRadius="10" BackgroundColor="White" BorderColor="#DDD" HasShadow="True">
+                <VerticalStackLayout>
+                    <Label 
+                        Text="A:"
+                        FontSize="18"
+                        VerticalOptions="Center"
+                        TextColor="#333"/>
+                    <Picker 
+                        x:Name="monedaDestinoPicker"
+                        Title="Selecciona moneda"
+                        FontSize="18"
+                        BackgroundColor="LightGray"
+                        TextColor="#333"
+                        ItemDisplayBinding="{Binding Nombre}"/>
+                </VerticalStackLayout>
+            </Frame>
 
-            <!-- Resultado de compra y venta -->
             <Label 
                 Text="Resultado de Compra:"
-                FontSize="18"/>
+                FontSize="18"
+                TextColor="#333"/>
             <Label 
                 x:Name="resultadoCompraLabel"
-                FontSize="18"/>
+                FontSize="18"
+                TextColor="#333"/>
 
             <Label 
                 Text="Resultado de Venta:"
-                FontSize="18"/>
+                FontSize="18"
+                TextColor="#333"/>
             <Label 
                 x:Name="resultadoVentaLabel"
-                FontSize="18"/>
+                FontSize="18"
+                TextColor="#333"/>
 
-            <!-- Botones de Compra y Venta -->
             <HorizontalStackLayout Spacing="15" HorizontalOptions="Center">
-                <Button 
-                    Text="Compra"
-                    FontSize="18"
-                    BackgroundColor="Blue"
-                    TextColor="White"
-                    HorizontalOptions="FillAndExpand"
-                    Clicked="OnCompraClicked"/>
-                <Button 
-                    Text="Venta"
-                    FontSize="18"
-                    BackgroundColor="Blue"
-                    TextColor="White"
-                    HorizontalOptions="FillAndExpand"
-                    Clicked="OnVentaClicked"/>
+                <Frame Padding="0" CornerRadius="10" BackgroundColor="Transparent" HasShadow="True">
+                    <Button 
+                        Text="Compra"
+                        FontSize="18"
+                        BackgroundColor="#4CAF50"
+                        TextColor="White"
+                        CornerRadius="10"
+                        Padding="15,10"
+                        HorizontalOptions="FillAndExpand"
+                        Clicked="OnCompraClicked"/>
+                </Frame>
+                <Frame Padding="0" CornerRadius="10" BackgroundColor="Transparent" HasShadow="True">
+                    <Button 
+                        Text="Venta"
+                        FontSize="18"
+                        BackgroundColor="#F44336"
+                        TextColor="White"
+                        CornerRadius="10"
+                        Padding="15,10"
+                        HorizontalOptions="FillAndExpand"
+                        Clicked="OnVentaClicked"/>
+                </Frame>
             </HorizontalStackLayout>
         </VerticalStackLayout>
     </ScrollView>

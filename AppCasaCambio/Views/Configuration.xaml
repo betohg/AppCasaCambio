@@ -2,49 +2,175 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="AppCasaCambio.Views.Configuration"
-             Title="{Binding AppTitle}">
+             Title="{Binding AppTitle}"
+             BackgroundColor="#F5F5F5">
     <ScrollView>
-    <VerticalStackLayout Padding="30" Spacing="20">
-        <Label 
-            x:Name="welcomeLabel" 
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
+        <VerticalStackLayout Padding="30" Spacing="20">
 
-        <!-- Input para el Título de la Aplicación -->
-        <Label Text="Título de la Aplicación:" FontSize="18"/>
-        <Entry 
-            x:Name="appTitleEntry" 
-            Text="{Binding AppTitle}" 
-            FontSize="18"/>
+            <!-- Label de bienvenida -->
+            <Label 
+                x:Name="welcomeLabel" 
+                FontSize="20" 
+                FontAttributes="Bold"
+                HorizontalOptions="Center"
+                VerticalOptions="Center"
+                TextColor="#333"/>
 
-        <!-- Input para el Mensaje de Bienvenida -->
-        <Label Text="Mensaje de Bienvenida:" FontSize="18"/>
-        <Entry 
-            x:Name="welcomeMessageEntry" 
-            Text="{Binding WelcomeMessage}" 
-            FontSize="18"/>
+            <BoxView HeightRequest="1" BackgroundColor="#DDD" HorizontalOptions="FillAndExpand" />
 
-        <!-- Input para el Título de Bienvenida -->
-        <Label Text="Título de Bienvenida:" FontSize="18"/>
-        <Entry 
-            x:Name="welcomeTitleEntry" 
-            Text="{Binding WelcomeTitle}" 
-            FontSize="18"/>
+            <Label
+                Text="Home "
+                FontSize="16" 
+                FontAttributes="Bold"
+                HorizontalOptions="Center"
+                VerticalOptions="Center"
+                TextColor="#333"/>
 
-        <!-- Input para el Nombre del Usuario -->
-        <Label Text="Nombre del Usuario:" FontSize="18"/>
-        <Entry 
-            x:Name="userNameEntry" 
-            Text="{Binding User.Name}" 
-            FontSize="18"/>
 
-        <!-- Botón para Guardar Cambios -->
-        <Button 
-            Text="Guardar Cambios" 
-            FontSize="18" 
-            BackgroundColor="Blue" 
-            TextColor="White" 
-            Clicked="OnSaveClicked"/>
-    </VerticalStackLayout>
-        </ScrollView>
+            <!-- Input para el Título de la Aplicación -->
+            <Frame Padding="10" CornerRadius="10" BackgroundColor="White" BorderColor="#DDD" HasShadow="True">
+                <VerticalStackLayout>
+                    <Label 
+                        Text="Título de la Aplicación:" 
+                        FontSize="18"
+                        TextColor="#333"/>
+                    <Entry 
+                        x:Name="appTitleEntry" 
+                        Text="{Binding AppTitle}" 
+                        FontSize="18"
+                        BackgroundColor="#FFF"
+                        TextColor="#333"/>
+                </VerticalStackLayout>
+            </Frame>
+
+            <!-- Input para el Mensaje de Bienvenida -->
+            <Frame Padding="10" CornerRadius="10" BackgroundColor="White" BorderColor="#DDD" HasShadow="True">
+                <VerticalStackLayout>
+                    <Label 
+                        Text="Mensaje de Bienvenida:" 
+                        FontSize="18"
+                        TextColor="#333"/>
+                    <Entry 
+                        x:Name="welcomeMessageEntry" 
+                        Text="{Binding WelcomeMessage}" 
+                        FontSize="18"
+                        BackgroundColor="#FFF"
+                        TextColor="#333"/>
+                </VerticalStackLayout>
+            </Frame>
+
+            <!-- Input para el Título de Bienvenida -->
+            <Frame Padding="10" CornerRadius="10" BackgroundColor="White" BorderColor="#DDD" HasShadow="True">
+                <VerticalStackLayout>
+                    <Label 
+                        Text="Título de Bienvenida:" 
+                        FontSize="18"
+                        TextColor="#333"/>
+                    <Entry 
+                        x:Name="welcomeTitleEntry" 
+                        Text="{Binding WelcomeTitle}" 
+                        FontSize="18"
+                        BackgroundColor="#FFF"
+                        TextColor="#333"/>
+                </VerticalStackLayout>
+            </Frame>
+
+            <BoxView HeightRequest="1" BackgroundColor="#DDD" HorizontalOptions="FillAndExpand" />
+
+            <Label
+                Text="Perfil"
+                FontSize="16" 
+                FontAttributes="Bold"
+                HorizontalOptions="Center"
+                VerticalOptions="Center"
+                TextColor="#333"/>
+
+            <!-- Input para el Nombre del Usuario -->
+            <Frame Padding="10" CornerRadius="10" BackgroundColor="White" BorderColor="#DDD" HasShadow="True">
+                <VerticalStackLayout>
+                    <Label 
+                        Text="Nombre del Usuario:" 
+                        FontSize="18"
+                        TextColor="#333"/>
+                    <Entry 
+                        x:Name="userNameEntry" 
+                        Text="{Binding User.Name}" 
+                        FontSize="18"
+                        BackgroundColor="#FFF"
+                        TextColor="#333"/>
+                </VerticalStackLayout>
+            </Frame>
+
+            <Frame Padding="10" CornerRadius="10" BackgroundColor="White" BorderColor="#DDD" HasShadow="True">
+                <VerticalStackLayout>
+                    <Label 
+                        Text="Saludos al Usuario:" 
+                        FontSize="18"
+                        TextColor="#333"/>
+                    <Entry 
+                        x:Name="userGreetingEntry" 
+                        Text="{Binding User.Greeting}" 
+                        FontSize="18"
+                        BackgroundColor="#FFF"
+                        TextColor="#333"/>
+                </VerticalStackLayout>
+            </Frame>
+
+            <BoxView HeightRequest="1" BackgroundColor="#DDD" HorizontalOptions="FillAndExpand" />
+
+            <Label
+                Text="Barra de Navegacion"
+                FontSize="16" 
+                FontAttributes="Bold"
+                HorizontalOptions="Center"
+                VerticalOptions="Center"
+                TextColor="#333"/>
+
+            <Frame Padding="10" CornerRadius="10" BackgroundColor="White" BorderColor="#DDD" HasShadow="True">
+                <VerticalStackLayout>
+                    <Label 
+                        Text="Titulo de Inicio" 
+                        FontSize="18"
+                        TextColor="#333"/>
+                    <Entry 
+                        x:Name="homeTitleEntry" 
+                        Text="{Binding Navbar.Home}" 
+                        FontSize="18"
+                        BackgroundColor="#FFF"
+                        TextColor="#333"/>
+                </VerticalStackLayout>
+            </Frame>
+
+            <Frame Padding="10" CornerRadius="10" BackgroundColor="White" BorderColor="#DDD" HasShadow="True">
+                <VerticalStackLayout>
+                    <Label 
+                        Text="Titulo de Configuracion" 
+                        FontSize="18"
+                        TextColor="#333"/>
+                    <Entry 
+                        x:Name="configurationTitleEntry" 
+                        Text="{Binding Navbar.Configuration}" 
+                        FontSize="18"
+                        BackgroundColor="#FFF"
+                        TextColor="#333"/>
+                </VerticalStackLayout>
+            </Frame>
+
+
+
+            <!-- Botón para Guardar Cambios -->
+            <Frame Padding="0" CornerRadius="10" BackgroundColor="Transparent" HasShadow="True">
+                <Button 
+                    Text="Guardar Cambios" 
+                    FontSize="18" 
+                    BackgroundColor="#1976D2" 
+                    TextColor="White" 
+                    CornerRadius="10"
+                    Padding="15,10"
+                    HorizontalOptions="FillAndExpand"
+                    Clicked="OnSaveClicked"/>
+            </Frame>
+
+        </VerticalStackLayout>
+    </ScrollView>
 </ContentPage>

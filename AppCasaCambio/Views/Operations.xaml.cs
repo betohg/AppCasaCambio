@@ -37,6 +37,12 @@ namespace AppCasaCambio.Views
             }
         }
 
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+            LoadMonedasAsync();
+        }
+
         // Evento para el botón de Compra
         private void OnCompraClicked(object sender, EventArgs e)
         {
@@ -48,7 +54,7 @@ namespace AppCasaCambio.Views
                 double resultadoCompra = Math.Round(cantidad * (double)monedaOrigen.ValorCompra / (double)monedaDestino.ValorVenta, 2);
 
                 // Mostrar el resultado
-                resultadoCompraLabel.Text = $"Resultado de Compra: ${resultadoCompra}";
+                resultadoCompraLabel.Text = $"${resultadoCompra}";
             }
             else
             {
@@ -67,7 +73,7 @@ namespace AppCasaCambio.Views
                 double resultadoVenta = Math.Round(cantidad * (double)monedaOrigen.ValorVenta / (double)monedaDestino.ValorCompra, 2);
 
                 // Mostrar el resultado
-                resultadoVentaLabel.Text = $"Resultado de Venta: ${resultadoVenta}";
+                resultadoVentaLabel.Text = $"${resultadoVenta}";
             }
             else
             {
